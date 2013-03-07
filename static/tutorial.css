@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(/static/font/gk5FxslNkTTHtojXrkp-xF1YPouZEKgzpqZW9wN-3Ek.woff) format('woff');
+}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
@@ -109,6 +116,13 @@ float: right;
 margin-top: 15px;
 
 }
+.left{
+  background-color:#DBDBDB;
+}
+li{
+  list-style-type: none;
+
+}
 
 ul{
   margin-left:5px;
@@ -184,7 +198,7 @@ a.school_button {
 display:inline;
 font-family: 'Open Sans Condensed', sans-serif;
 font-weight:300;
-font-size: 30px;
+font-size: 20px;
 color: black;
 text-decoration: none;
 width: 100px;
@@ -337,9 +351,6 @@ NIVOSLIDER STYLES
 	width:510px;
 	position:relative;
 }
-
-
-
 
 
         

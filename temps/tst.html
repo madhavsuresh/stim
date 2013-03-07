@@ -20,6 +20,7 @@
     <div id="container" class="outerpane">
 <div class="pane">
 {% for category in vids %}
+<div class="cat-pod">
  <h3> {{ category }} </h3>
  <ul>
  {% for video in vids[category] %}
@@ -29,6 +30,7 @@
  {% endfor %}
  </ul>
 {% endfor %}
+</div>
       </div>
 
       <div class="pane vid">
