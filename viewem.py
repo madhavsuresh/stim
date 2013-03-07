@@ -4,6 +4,8 @@ import os
 
 PLAYER = 'omxplayer'
 VIDEO_PATH = '/home/pi/stim/static/vids'
+TURN_ON_PORT = 'echo "1" > /sys/class/gpio/gpio17/value'
+TURN_OFF_PORT = 'echo "0" > /sys/class/gpio/gpio17/value'
 
 urls = ('/', 'play', '/playem',
         'playit')
@@ -24,7 +26,8 @@ class playit:
         
 def play_em(fname):
     print fname
-    exstr = PLAYER + ' ' + VIDEO_PATH + ' ' + fname
+    exstr = TURN_OFF_PORT + ' && '  + PLAYER + ' ' + VIDEO_PATH + ' ' + fname + ' && ' + TURN_ON_PORT
+    print exstr
     os.system(exstr)
 
 if __name__ == '__main__':
