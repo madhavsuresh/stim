@@ -9,10 +9,11 @@ def get_categories(directory):
     for vid in l:
         spl = vid.split('__')
         pretty_print = spl[1][:-SUFFIX_LENGTH].replace('_',' ')
+        htmlid = vid.replace('.','no_pants_mode')
         if len(spl) > 1 and spl[0] in cats:
-            cats[spl[0]].append((vid,pretty_print))
+            cats[spl[0]].append((vid,pretty_print,htmlid))
         else:
-            cats[spl[0]] = [(vid,pretty_print),]
+            cats[spl[0]] = [(vid,pretty_print,htmlid,)]
     '''
     for key in cats:
         print key
