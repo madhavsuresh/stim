@@ -2,11 +2,11 @@
   <head>
     <title>BME390 Prototype</title>
     <link rel="stylesheet" type="text/css" href="/static/tutorial.css" />
-    <link href='http://fonts.googleapis.com/css?family=Gudea|Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-      function playThis(vid){
-        jQuery(vid).addClass("selected");
+      function playThis(vid,id){
+        jQuery('.listel').addClass('hideme')
+        jQuery(id + ' img').removeClass('hideme')
         jQuery.get('/playem',{ file : vid });
         jQuery('#video')[0].src= '/static/vids/' + vid;
         jQuery('#video')[0].load();
@@ -18,20 +18,21 @@
     </head>
   <body>
     <div id="container" class="outerpane">
-<div class="pane">
+<div class="left pane">
 {% for category in vids %}
 <div class="cat-pod">
  <h3> {{ category }} </h3>
  <ul>
  {% for video in vids[category] %}
- <li> 
- <a id = "{{ video[0] }}" class ="school_button fake-link" onclick="playThis('{{ video[0] }}');"> {{ video[1] }} </a>
+ <li id = "{{ video[2] }}"> 
+ <a  class ="school_button fake-link" onclick="playThis('{{ video[0] }}', '#{{ video[2] }}');"> {{ video[1] }} </a>
+ <img class ="listel hideme" src="/static/Next.png"/></img>
  </li>
  {% endfor %}
  </ul>
-{% endfor %}
 </div>
-      </div>
+{% endfor %}
+    </div><!-- ending left pane -->
 
       <div class="pane vid">
       <video  controls="controls" id="video" >
