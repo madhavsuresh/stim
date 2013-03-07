@@ -90,6 +90,7 @@ button {  width: auto; overflow: visible; }
  */
 
 body{
+  background-color: #000000;
 
 }
 
@@ -111,6 +112,8 @@ padding-top: 10px;
 .left{
 }
 .cat-pod{
+  padding-top: 10px;
+  padding-left: 10px;
   margin-bottom: 10px;
   background-color:#D1d1d1;
   padding-right:10px;
@@ -133,13 +136,18 @@ margin-top: 15px;
 img.listel {
   height:10px;
   width:10px;
-  float: right;
+  float: left;
   margin-right: 10px;
   margin-top: 7px;
 
 }
 .hideme{
-  display:none;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-out;
+}
+.donthideme{
+  opacity: 1;
+  -webkit-transition: opacity .75s ease-in;
 }
 
 
@@ -197,7 +205,6 @@ font-weight:300;
 font-size: 30px;
 color: black;
 text-decoration: none;
-padding-right: 10px;
 }
 input.submit_button{
   width: 4em;
