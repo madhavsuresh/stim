@@ -1,7 +1,7 @@
 import os
 from jinja2 import Template
+from constants import *
 
-SUFFIX_LENGTH = 4
 
 def get_categories(directory):
     cats = {}
@@ -29,7 +29,7 @@ def template_dis(cats,fname):
     return template.render(vids = cats)
 
 
-f = open('out.html','w')
-s = template_dis(get_categories('./vid_bk/'),'./temps/tst.html')
+f = open(BASE_DIR + TEMPLATE_DIR + TEMPLATE_NAME,'w')
+s = template_dis(get_categories(BASE_DIR + VID_DIR),BASE_DIR+TEMPLATE_DIR+MAKER_NAME)
 f.write(s)
 f.close()

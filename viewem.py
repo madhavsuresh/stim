@@ -1,6 +1,7 @@
 import web
 from threading import Thread
 import os
+from constants import *
 
 PLAYER = 'omxplayer'
 VIDEO_PATH = '/home/pi/stim/static/vids'
@@ -9,7 +10,7 @@ TURN_OFF_PORT = 'echo "0" > /sys/class/gpio/gpio17/value'
 
 urls = ('/', 'play', '/playem',
         'playit')
-render = web.template.render('/home/madhav/bme390/stim/templates/')
+render = web.template.render(BASE_DIR+TEMPLATE_DIR)
 app = web.application(urls, globals())
 class play:
     def GET(self):
