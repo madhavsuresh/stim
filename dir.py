@@ -28,8 +28,8 @@ def template_dis(cats,fname):
     template = Template(c)
     return template.render(vids = cats)
 
-
-f = open(BASE_DIR + TEMPLATE_DIR + TEMPLATE_NAME,'w')
-s = template_dis(get_categories(BASE_DIR + VID_DIR),BASE_DIR+TEMPLATE_DIR+MAKER_NAME)
-f.write(s)
-f.close()
+def makeit():
+    f = open(BASE_DIR + TEMPLATE_DIR + TEMPLATE_NAME,'w')
+    s = template_dis(get_categories(BASE_DIR + VID_DIR),BASE_DIR+TEMPLATE_DIR+MAKER_NAME)
+    f.write(s)
+    f.close()
