@@ -1,0 +1,32 @@
+$def with(filez)
+<html>
+  <head>
+    <title>BME390 Prototype</title>
+    <link rel="stylesheet" type="text/css" href="../static/tutorial.css" />
+    <link href='http://fonts.googleapis.com/css?family=Gudea|Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+      function SelectAll(id)
+      {
+        document.getElementById(id).focus();
+        document.getElementById(id).select();
+      }
+    </script>
+    </head>
+  <body>
+    <div id="container" class="outerpane">
+    
+      <a class="school_button" href="/playem/">Fixed Blank Duration x_x_x  </a>
+      <br/>
+
+      $if filez != '':
+      <video poster="ico.png" autoplay="autoplay" controls="controls">
+          <source src="../static/out.webm" type="video/webm"  />
+          </video>
+
+         
+    <br/>
+
+  </div> <!--outerpane-->
+  </body>
+  </html>
+
