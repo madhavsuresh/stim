@@ -15,7 +15,6 @@ render = web.template.render(BASE_DIR+TEMPLATE_DIR)
 app = web.application(urls, globals())
 class play:
     def GET(self):
-        print 'wat?'
         return render.out()
 
 class playit:
