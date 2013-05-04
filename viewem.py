@@ -1,6 +1,8 @@
 import web
+import mimetypes
 from threading import Thread
 import os
+from jinja2 import Template
 from constants import *
 
 BASE_DIR = '/home/madhav/bme390/stim'
@@ -31,9 +33,31 @@ class playit:
         t.start()
         return None
 
+def mime_type(filename):
+        return mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+
+def headerProcessor(h):
+    res = h()
+    print type(res)
+    print 'LENGTH: ' ,len(res)
+    web.header('Content-Length',len(res))
+    return res
+
 class vids:
-    def GET(self,args):
-        return args
+    def GET(self,fname):
+        try:
+            web.header('Content-Type',mime_type(fname))
+            web.header('Server','Apache')
+            web.header('Content-Length',os.path.getsize('./vids/' + fname))
+            web.header('Accept-Ranges','bytes')
+            web.header('Connection','close')
+            f = open('./vids/' + fname,'rb')
+            x = f.read()
+            return x
+            web.ctx.output = f.read()
+            return web
+        except (IOError,OSError):
+            return web.notfound()
         
 def play_em(fname):
     print fname
@@ -77,5 +101,6 @@ def makeit():
 
 
 if __name__ == '__main__':
-    dir.makeit()
+    makeit()
+    #app.add_processor(headerProcessor)
     app.run()

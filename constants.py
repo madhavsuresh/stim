@@ -1,4 +1,4 @@
-BASE_DIR = '/opt/stim'
+BASE_DIR = '/home/madhav/bme390/stim'
 VID_DIR = '/static/vids/'
 TEMPLATE_DIR = '/templates/'
 TEMPLATE_NAME = 'out.html'
